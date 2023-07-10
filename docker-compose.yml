@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  express-typescript:
+  stock-page-node:
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,13 +9,12 @@ services:
     volumes:
       - ./src:/home/node/app/src
       - ./nodemon.json:/home/node/app/nodemon.json
-    container_name: express-typescript
+    container_name: stock-page-node
     expose:
       - '8000'
     ports:
       - '8000:8000'
     command: npm run dev
-
 # To Build
 # docker-compose build
 
