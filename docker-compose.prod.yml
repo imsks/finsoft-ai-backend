@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  express-typescript:
+    build:
+      target: production
+    command: npm start
+
+# To Run
+# docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d   

@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  express-typescript:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    volumes:
+      - ./src:/home/node/app/src
+      - ./nodemon.json:/home/node/app/nodemon.json
+    container_name: express-typescript
+    expose:
+      - '8000'
+    ports:
+      - '8000:8000'
+    command: npm run dev
+
+# To Build
+# docker-compose build
+
+# To Run
+# docker-compose up -d
